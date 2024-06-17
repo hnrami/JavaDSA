@@ -31,7 +31,7 @@ public class MoveZeroes {
 		// TODO Auto-generated method stub
 		int input[] = { 1, 0, 1, 9, 0, 8, 0 };
 		System.out.println("Original array: " + Arrays.toString(input));
-		// methodOne(input);
+//		methodOne(input);
 
 		methodtwo(input);
 		// methodthree(input);
