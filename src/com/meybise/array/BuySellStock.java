@@ -5,11 +5,35 @@ public class BuySellStock {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int input[] = { 7, 1, 5, 3, 6, 4 };
-//		System.out.println(maxProfit(input));
-		System.out.println(maxProfitother(input));
+		int input[] = { 1,2 };
+		System.out.println(maxProfit(input));
+//		System.out.println(maxProfitother(input));
 	}
 
+	
+	public static int maxprofitrevise(int[] prices) {
+		
+		
+		int profit=0;
+		int min=prices[0];
+		
+		for(int i=0;i<prices.length-1;i++) {
+			
+			if(prices[i]<min) {
+				min=prices[i];
+			}
+			
+			int value = prices[i-1] - min ;
+			
+			if(value>profit) {
+				profit=value;
+			}
+			
+		}
+		
+		return profit;
+		
+	}
 	public static int maxProfit(int[] prices) {
 		
 		 if (prices == null || prices.length < 2) {

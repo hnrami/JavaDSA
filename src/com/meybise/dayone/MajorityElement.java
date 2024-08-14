@@ -18,17 +18,21 @@ public class MajorityElement {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int[] nums = {2, 2, 1, 1, 1, 2, 2};
-        int majorityElement = findMajorityElement(nums);
-        System.out.println("The majority element is: " + majorityElement);
+		 int[] nums = {1, 1, 3, 1, 1, 2, 1,7}; // Input array
+	        Integer majorityElement = findMajorityElement(nums);
+	        if (majorityElement != null) {
+	            System.out.println("Majority Element: " + majorityElement);
+	        } else {
+	            System.out.println("No majority element found.");
+	        }
 
 	}
 	
-	  public static int findMajorityElement(int[] nums) {
-	        int count = 0;
+	 public static Integer findMajorityElement(int[] nums) {
+	        // Step 1: Find a candidate for the majority element
 	        Integer candidate = null;
+	        int count = 0;
 
-	        // Phase 1: Find a candidate
 	        for (int num : nums) {
 	            if (count == 0) {
 	                candidate = num;
@@ -36,19 +40,19 @@ public class MajorityElement {
 	            count += (num == candidate) ? 1 : -1;
 	        }
 
-	        // Phase 2: Verify the candidate (Optional)
+	        // Step 2: Verify the candidate
 	        count = 0;
 	        for (int num : nums) {
 	            if (num == candidate) {
 	                count++;
 	            }
 	        }
-	        
+
+	        // Check if the candidate is indeed the majority element
 	        if (count > nums.length / 2) {
 	            return candidate;
 	        } else {
-	            throw new IllegalArgumentException("No majority element found");
+	            return null; // No majority element
 	        }
 	    }
-
 }

@@ -29,15 +29,41 @@ public class MoveZeroes {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int input[] = { 1, 0, 1, 9, 0, 8, 0 };
+		int input[] = { 1, 1, 1, 9, 1, 8, 1 };
 		System.out.println("Original array: " + Arrays.toString(input));
-//		methodOne(input);
+		methodpractice(input);
 
-		methodtwo(input);
+//		methodtwo(input);
 		// methodthree(input);
 		System.out.println("Array after moving zeroes to end: " + Arrays.toString(input));
 	}
 
+	
+	public static void methodpractice(int [] nums) {
+		
+		int nonzeroIndex=0;
+		
+		for(int i=0;i<nums.length;i++) {
+			
+			
+			if(nums[i]!=0) {
+//				nums[nonzeroIndex]=nums[i];
+//				nonzeroIndex++;
+				
+				int temp = nums[i];
+				nums[nonzeroIndex]=nums[i];
+				nums[i]=temp;
+				nonzeroIndex++;
+				
+			}
+		}
+		
+		for(int j=nonzeroIndex;j<nums.length;j++) {
+			nums[j]=0;
+			
+		}
+			
+	}
 	public static void methodOne(int[] nums) {
 
 		int nonZeroIndex = 0;
