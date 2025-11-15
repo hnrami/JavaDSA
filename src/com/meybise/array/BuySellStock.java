@@ -5,12 +5,68 @@ public class BuySellStock {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int input[] = { 1,2 };
-		System.out.println(maxProfit(input));
-//		System.out.println(maxProfitother(input));
+		int input[] = { 7,12,2,9,4,5,65,7 };
+//		System.out.println(maxProfit(input));
+		System.out.println(maxprofitown(input));
+//		fixminmxnumber(input);
 	}
 
+public static int maxprofitown(int [] price) {
 	
+	
+	int profit=0;
+	
+	for (int i = 0; i < price.length - 1; i++) {
+	    for (int j = i + 1; j < price.length; j++) {  // Changed i to j in the loop condition
+	        int sum = price[j] - price[i];
+	        if (profit < sum)
+	            profit = sum;
+	    }
+	}
+//	int min=price[0];
+//	
+//	
+//	for(int i=0;i<price.length-1;i++) {
+//		
+//		if(min>price[i]) {
+//			min=price[i];
+//			
+//		}
+//		
+//		int value = price[i]-min;
+//		
+//		if(value>profit) {
+//			profit=value;
+//		}
+//		
+//		
+//	}
+	
+	return profit;
+}
+	
+public static void  fixminmxnumber(int[] prices) {
+		
+		
+		int max=prices[0];
+		int min=prices[0];
+		
+		for(int i=0;i<prices.length-1;i++) {
+			
+			if(min > prices[i]) {
+				min=prices[i];
+			}
+			if(max < prices[i]) {
+				max=prices[i];
+			}
+			
+		}
+		
+		System.out.println("MAX"+max);
+		System.out.println("MIN"+min);
+		
+	}
+
 	public static int maxprofitrevise(int[] prices) {
 		
 		

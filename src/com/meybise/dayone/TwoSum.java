@@ -14,8 +14,8 @@ public class TwoSum {
 	 */
 	public static void main(String[] args) {
 
-		int inputValues[]= {2,7,11,15,5,6,4,6,7,8,5,3,};
-		int target= 40;
+		int inputValues[]= {3,2,3};
+		int target= 6;
 		
 		if(target ==0 || target <0) {
 			System.out.println("NO");
